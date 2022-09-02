@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sign_page{
+    background-image: url("/public/MacBook\ Pro\ 16_\ -\ 19.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign_page #inside_page{
+    width: 100vh;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.sign_page #inside_page #main_path h1{
+    font-size: 4em;
+}
+
+/* header{
+    position: relative;
+
+} */
+
+.ink_sign{
+    text-decoration: none;
+    color: white;
+}

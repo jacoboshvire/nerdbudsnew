@@ -9,20 +9,26 @@ import '@splidejs/react-splide/css';
 
 function Home() {
     var [navbar, setNavbar] = useState(false)
-    var [loading, setloading] = useState(false)
+
     var [clickmenu, setclickmenu] = useState(false)
     var [menubar, setmenubar] = useState(false)
     var [mainmenus, setmainmenus] = useState(false)
+    var [abtMenu, setabtMenu] = useState(false)
     var [can, setcan] = useState(false)
+    var [abt, setabt] = useState(false)
     useEffect(() => {
         Aos.init({
             duration: 1500 
         });
-        setloading(true)
-        setTimeout(()=>{
-            setloading(false)
-        }, 10000)
     }, [])
+
+    var abtMenu = () =>{
+        if (!abt){
+            setabt(true)
+        } else {
+            setabt(false)
+        }
+    }
 
     var changenav = () =>{
         if (window.scrollY >= 100){
@@ -58,40 +64,7 @@ function Home() {
     window.addEventListener("scroll", changenav);
   return (
     <div>
-        {
-            loading ?
-            <div id="main">
-            <div id="anim">
-                <div id="cir">
-                    <div id="glasses">
-                        <div id="cir1">
-    
-                        </div>
-                        <div id="line">
-    
-                        </div>
-                        <div id="cir2">
-    
-                        </div>
-                    </div>
-                    <div id="btm">
-                        
-                    </div>
-                    <div id="re_btm">
-                        
-                    </div>
-                </div>
-            </div>
-            <h1 id="nameNM">nerdbuds</h1>
-            <br/>
-            <div id="main_btns">
-                <span id="btns1" ></span>
-                <span id="btns2" ></span>
-                <span id="btns3" ></span>
-                <span id="btns4" ></span>
-            </div>
-        </div>
-            :
+
             <div>
         <div className={mainmenus ? "hidden" : "mainmenu"} >
             <div id="cen" onClick={maincan}>
@@ -130,7 +103,7 @@ function Home() {
                     <NavLink  to={'/'} className="sign1">
                         login
                     </NavLink>
-                    <NavLink  to={'/'} className="sign2">
+                    <NavLink  to={'/sign'} className="sign2">
                         Signin
                     </NavLink>
                 </div>
@@ -188,7 +161,7 @@ function Home() {
                 Nerdbuds is driven to give you an impeccable experience with our softwares and services taking your business to the top and setting you apart from the competition.
                 </p>
                 <br />
-                <NavLink  to={'/'} id="sign4">
+                <NavLink  to={'/sign'} id="sign4">
                     Signin
                 </NavLink>
             </div>
@@ -301,7 +274,7 @@ function Home() {
                     </p>
                     <br />
                     <br />
-                    <NavLink  to={'/'} id="sign4">
+                    <NavLink  to={'/sign'} id="sign4">
                         Signin
                     </NavLink>
                 </div>
@@ -314,7 +287,7 @@ function Home() {
                     </p>
                     <br />
                     <br />
-                    <NavLink  to={'/'} id="sign4">
+                    <NavLink  to={'/sign'} id="sign4">
                         Signin
                     </NavLink>
                 </div>
@@ -392,7 +365,7 @@ function Home() {
                         <br />
                         <br />
                         <br />
-                        <NavLink  to={'/'} className="sign2">
+                        <NavLink  to={'/sign'} className="sign2">
                             Signin
                         </NavLink>
                     </div>
@@ -445,7 +418,7 @@ function Home() {
             </div>
         </footer>
         </div>
-        }
+        
 
     </div>
   )
